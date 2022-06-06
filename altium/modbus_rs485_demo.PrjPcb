@@ -63,7 +63,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=BTVKHPBK
 
 [Document2]
 DocumentPath=lib\schematic_library.SchLib
@@ -1074,23 +1074,53 @@ NetClassManualEnabled=1
 NetClassSeparateForBusSections=0
 
 [LibraryUpdateOptions]
-SelectedOnly=0
+SelectedOnly=1
 UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=schematic_library.SchLib
+ComponentDesignItemID0=LED_BLUE
+ComponentSymbolReference0=LED_BLUE
+ComponentUpdate0=1
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=schematic_library.SchLib
+ComponentDesignItemID1=LED_GREEN
+ComponentSymbolReference1=LED_GREEN
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=schematic_library.SchLib
+ComponentDesignItemID2=LED_RED
+ComponentSymbolReference2=LED_RED
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
 PreserveParameterLocations=1
 PreserveParameterVisibility=1
-DoGraphics=1
+DoGraphics=0
 DoParameters=1
-DoModels=1
+DoModels=0
 AddParameters=0
 RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
+ParameterName0=Comment
+ParameterUpdate0=1
+ParameterName1=Component Kind
+ParameterUpdate1=0
+ParameterName2=Description
+ParameterUpdate2=0
+ParameterName3=Library Reference
+ParameterUpdate3=0
+ParameterName4=Supplier 1
+ParameterUpdate4=0
+ParameterName5=Supplier Part Number 1
+ParameterUpdate5=0
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
