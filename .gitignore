@@ -6,3 +6,5 @@ altium/out/
 buy/
 ~$*
 .ipynb_checkpoints/
+embed/build
+embed/obj
