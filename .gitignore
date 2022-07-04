@@ -8,3 +8,5 @@ buy/
 .ipynb_checkpoints/
 embed/build
 embed/obj
+embed/test/bin
+embed/test/obj

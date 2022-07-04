@@ -30,10 +30,11 @@ all: format ./build/main.txt
 impact: all # flash the target device
 	$(FL) -n MSP430G2xx3 -w ./build/main.txt -v -z [RESET, VCC=3300] -g -j fast
 
-format: $(SRCS)
+format: $(SRCS) $(wildcard include/*.h)
 	$(FT) --suffix=none $^
 
 clean:  # delete all object files
 	rm -f $(OBJS)
 	rm -f ./build/main.out
+	rm -f ./build/main.map
 	rm -f ./build/main.txt
