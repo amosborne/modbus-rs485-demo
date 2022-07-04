@@ -1,6 +1,3 @@
-#ifndef BSL430_PROTOCOL_PARSER_H
-#define BSL430_PROTOCOL_PARSER_H
-
 #include <stdint.h>
 
 #define HDR               0x80
@@ -17,6 +14,4 @@
 #define LL_BYTE  6
 #define LH_BYTE  7
 
-void bsl430_protocol_parse(uint8_t *bytes);
-
-#endif
+void bsl430_protocol_parse( uint8_t *bytes );

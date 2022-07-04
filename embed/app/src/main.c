@@ -5,13 +5,12 @@
 #define SHIFT_RCLK  BIT1  // P2.1: shift register, storage register clock
 #define SHIFT_SER   BIT2  // P2.2: shift register, serial data input
 
-static void display(unsigned int digit, unsigned int number);
+static void display( unsigned int digit, unsigned int number );
 
 /**
  * main.c
  */
-int main(void)
-{
+int main( void ) {
     WDTCTL = WDTPW | WDTHOLD;  // stop watchdog timer
 
     P1DIR = 0xFF;  // set all port 1 to output
@@ -27,29 +26,32 @@ int main(void)
     volatile unsigned int i;
     unsigned int k = 0;
 
-    while(1)
-    {
-        display(3, k);
-        k = (k == 9) ? 0 : k + 1;
-        for(i=100000; i>0; i--);
+    while ( 1 ) {
+        display( 3, k );
+        k = ( k == 9 ) ? 0 : k + 1;
+
+        for ( i = 100000; i > 0; i-- );
     }
 
 }
 
-void display(unsigned int digit, unsigned int number) {
-    uint8_t byte2send = (1 << (4 + digit)) | number;
+void display( unsigned int digit, unsigned int number ) {
+    uint8_t byte2send = ( 1 << ( 4 + digit ) ) | number;
 
     unsigned int i;
-    for (i = 8; i; --i) {
+
+    for ( i = 8; i; --i ) {
         P2OUT &= ~SHIFT_SRCLK;                // SRCLK LOW
-        if ((byte2send >> (i - 1)) & BIT0) {
+
+        if ( ( byte2send >> ( i - 1 ) ) & BIT0 ) {
             P2OUT |= SHIFT_SER;               // SHIFT_SER HIGH
-        }
-        else {
+        } else {
             P2OUT &= ~SHIFT_SER;              // SHIFT_SER LOW
         }
+
         P2OUT |= SHIFT_SRCLK;                 // SRCLK HIGH
     }
+
     P2OUT |= SHIFT_RCLK;                      // RCLK HIGH
     P2OUT &= ~SHIFT_RCLK;                     // RCLK LOW
 }
